@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlr6x31phuvus"]
+[gd_scene load_steps=7 format=3 uid="uid://dlr6x31phuvus"]
 
 [ext_resource type="PackedScene" uid="uid://b7wu05i547vg0" path="res://src/plant_box/plant_box.tscn" id="1_eewff"]
 [ext_resource type="Script" uid="uid://wkwq7hadg7p6" path="res://src/plant_box/plant_grid_container.gd" id="1_gh0ne"]
 [ext_resource type="PackedScene" uid="uid://b41or7dcpr6ox" path="res://src/sidebar/sidebar_menu.tscn" id="3_5q4o7"]
 [ext_resource type="Script" uid="uid://cdkcky2vpdtn8" path="res://src/managers/interaction_manager.gd" id="4_3cfgd"]
 [ext_resource type="Script" uid="uid://i7m14kcvvg8e" path="res://src/managers/plant_growth_manager.gd" id="5_fyndt"]
+[ext_resource type="Script" uid="uid://gk71eqjiho7u" path="res://src/managers/plant_manager.gd" id="6_kmhfv"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -180,8 +181,15 @@ layout_mode = 2
 [node name="MenuContainer" parent="HBoxContainer" instance=ExtResource("3_5q4o7")]
 layout_mode = 2
 
-[node name="InteractionManager" type="Node" parent="."]
+[node name="InteractionManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "plant_manager")]
 script = ExtResource("4_3cfgd")
+plant_grid_container = NodePath("../HBoxContainer/PlantGridContainer")
+plant_manager = NodePath("../PlantManager")
 
-[node name="PlantGrowthManager" type="Node" parent="."]
+[node name="PlantGrowthManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container")]
 script = ExtResource("5_fyndt")
+plant_grid_container = NodePath("../HBoxContainer/PlantGridContainer")
+
+[node name="PlantManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container")]
+script = ExtResource("6_kmhfv")
+plant_grid_container = NodePath("../HBoxContainer/PlantGridContainer")

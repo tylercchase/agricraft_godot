@@ -11,7 +11,7 @@ extends Resource
 @export var grow_ticks: int = 10
 @export var sell_price: int = 1
 
-var genetics: Genome
+var genetics: Genome = Genome.new() # default to base 1
 
 
 

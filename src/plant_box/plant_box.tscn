@@ -3,15 +3,14 @@
 [ext_resource type="Script" uid="uid://dn1v1sxfobq4c" path="res://src/plant_box/plant_box.gd" id="1_85mlm"]
 [ext_resource type="Texture2D" uid="uid://187vmdldpcef" path="res://icon.svg" id="1_nywa7"]
 
-[node name="PanelContainer" type="Button"]
+[node name="PlantBox" type="Button"]
 custom_minimum_size = Vector2(50, 50)
-offset_right = 78.0
+offset_right = 50.0
 offset_bottom = 50.0
-text = "test"
+flat = true
 script = ExtResource("1_85mlm")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 modulate = Color(0.54099, 0.54099, 0.54099, 1)
 layout_mode = 1
 anchors_preset = 15

@@ -7,3 +7,6 @@ extends Node
 func plant_crop(plant: Plant, box_id):
     var box = plant_grid_container.get_box(box_id)
     box.setup_plant(plant)
+
+func harvest_crop(id):
+    pass

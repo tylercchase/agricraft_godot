@@ -11,7 +11,8 @@ func _ready():
 
 func update_progress():
 	current_progress += plant_resource.genetics.speed * 10
-	set_progress(current_progress)
+	if current_progress <= 100:
+		set_progress(current_progress)
 
 func set_progress(value: float):
 	$ProgressBar.value = value
@@ -21,6 +22,8 @@ func has_plant() -> bool:
 
 func setup_plant(plant: Plant):
 	plant_resource = plant
+	text = plant.display_character
 
 func remove_plant():
 	plant_resource = null
+	text = ''

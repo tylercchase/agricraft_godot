@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://b41or7dcpr6ox"]
+
+[ext_resource type="Script" uid="uid://ck2vpuaba5exs" path="res://src/sidebar/sidebar_menu.gd" id="1_05snc"]
+
+[node name="MenuContainer" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_05snc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PlantButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Plant Seed"
+
+[node name="RemoveButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Remove Seed	"
+
+[node name="TrellisButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Construct Trellis"

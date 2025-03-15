@@ -1,0 +1,187 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlr6x31phuvus"]
+
+[ext_resource type="PackedScene" uid="uid://b7wu05i547vg0" path="res://src/plant_box/plant_box.tscn" id="1_eewff"]
+[ext_resource type="Script" uid="uid://wkwq7hadg7p6" path="res://src/plant_box/plant_grid_container.gd" id="1_gh0ne"]
+[ext_resource type="PackedScene" uid="uid://b41or7dcpr6ox" path="res://src/sidebar/sidebar_menu.tscn" id="3_5q4o7"]
+[ext_resource type="Script" uid="uid://cdkcky2vpdtn8" path="res://src/managers/interaction_manager.gd" id="4_3cfgd"]
+[ext_resource type="Script" uid="uid://i7m14kcvvg8e" path="res://src/managers/plant_growth_manager.gd" id="5_fyndt"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlantGridContainer" type="GridContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+columns = 7
+script = ExtResource("1_gh0ne")
+
+[node name="PanelContainer" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer2" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer3" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer4" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer5" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer6" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer7" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer8" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer9" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer10" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer11" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer12" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer13" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer14" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer15" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer16" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer17" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer18" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer19" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer20" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer21" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer22" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer23" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer24" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer25" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer26" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer27" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer28" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer29" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer30" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer31" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer32" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer33" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer34" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer35" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer36" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer37" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer38" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer39" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer40" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer41" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer42" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer43" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer44" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer45" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer46" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer47" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer48" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="PanelContainer49" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+layout_mode = 2
+
+[node name="MenuContainer" parent="HBoxContainer" instance=ExtResource("3_5q4o7")]
+layout_mode = 2
+
+[node name="InteractionManager" type="Node" parent="."]
+script = ExtResource("4_3cfgd")
+
+[node name="PlantGrowthManager" type="Node" parent="."]
+script = ExtResource("5_fyndt")

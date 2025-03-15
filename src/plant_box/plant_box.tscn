@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7wu05i547vg0"]
+
+[ext_resource type="Script" uid="uid://dn1v1sxfobq4c" path="res://src/plant_box/plant_box.gd" id="1_85mlm"]
+[ext_resource type="Texture2D" uid="uid://187vmdldpcef" path="res://icon.svg" id="1_nywa7"]
+
+[node name="PanelContainer" type="Button"]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 78.0
+offset_bottom = 50.0
+text = "test"
+script = ExtResource("1_85mlm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.54099, 0.54099, 0.54099, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nywa7")
+expand_mode = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+show_percentage = false

@@ -5,6 +5,7 @@ extends Node
 @export var plant_grid_container: PlantGridContainer
 @export var plant_manager: PlantManager
 
+
 enum Mode {
 	NONE,
 	PLANT,
@@ -25,3 +26,7 @@ func _on_interaction_mode_changed(mode: Mode):
 func _on_square_clicked(id):
     if current_mode == Mode.PLANT:
         plant_manager.plant_crop(load("res://src/plant/resources/wheat.tres"), id)
+    elif current_mode == Mode.NONE:
+        plant_manager.harvest_crop(id)
+    elif current_mode == Mode.REMOVE:
+        plant_manager.remove_crop(id)

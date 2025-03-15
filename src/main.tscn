@@ -179,8 +179,9 @@ layout_mode = 2
 [node name="PanelContainer49" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="MenuContainer" parent="HBoxContainer" instance=ExtResource("3_5q4o7")]
+[node name="MenuContainer" parent="HBoxContainer" node_paths=PackedStringArray("inventory_manager") instance=ExtResource("3_5q4o7")]
 layout_mode = 2
+inventory_manager = NodePath("../../InventoryManager")
 
 [node name="InteractionManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "plant_manager")]
 script = ExtResource("4_3cfgd")
@@ -191,9 +192,10 @@ plant_manager = NodePath("../PlantManager")
 script = ExtResource("5_fyndt")
 plant_grid_container = NodePath("../HBoxContainer/PlantGridContainer")
 
-[node name="PlantManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container")]
+[node name="PlantManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "inventory_manager")]
 script = ExtResource("6_kmhfv")
 plant_grid_container = NodePath("../HBoxContainer/PlantGridContainer")
+inventory_manager = NodePath("../InventoryManager")
 
 [node name="InventoryManager" type="Node" parent="."]
 script = ExtResource("7_rlaii")

@@ -3,6 +3,8 @@ class_name InventoryManager
 extends Node
 
 
+signal inventory_changed
+
 class ItemSlot extends Resource:
     var id
     var item
@@ -15,6 +17,7 @@ func add_item(item):
     item_slot.item = item
     item_slot.id = item_slot.get_rid()
     items.push_back(item_slot)
+    inventory_changed.emit(items)
 
 func find_id(item: ItemSlot, id):
     return item.id == id
@@ -24,3 +27,4 @@ func remove_item(item_id, amount):
     items[index].amount -= 1
     if items[index].amount <= 0:
         items.remove_at(index)
+    inventory_changed.emit(items)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dlr6x31phuvus"]
+[gd_scene load_steps=9 format=3 uid="uid://dlr6x31phuvus"]
 
 [ext_resource type="PackedScene" uid="uid://b7wu05i547vg0" path="res://src/plant_box/plant_box.tscn" id="1_eewff"]
 [ext_resource type="Script" uid="uid://wkwq7hadg7p6" path="res://src/plant_box/plant_grid_container.gd" id="1_gh0ne"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://i7m14kcvvg8e" path="res://src/managers/plant_growth_manager.gd" id="5_fyndt"]
 [ext_resource type="Script" uid="uid://gk71eqjiho7u" path="res://src/managers/plant_manager.gd" id="6_kmhfv"]
 [ext_resource type="Script" uid="uid://cg42us3h16aru" path="res://src/managers/inventory_manager.gd" id="7_rlaii"]
+[ext_resource type="PackedScene" uid="uid://q7vq66m46nni" path="res://src/tooltip/tooltip.tscn" id="8_5mrjc"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -199,3 +200,12 @@ inventory_manager = NodePath("../InventoryManager")
 
 [node name="InventoryManager" type="Node" parent="."]
 script = ExtResource("7_rlaii")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" parent="Control" instance=ExtResource("8_5mrjc")]
+layout_mode = 0
+offset_right = 300.0

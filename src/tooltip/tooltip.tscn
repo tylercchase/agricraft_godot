@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://q7vq66m46nni"]
+
+[ext_resource type="PackedScene" uid="uid://dfq0y6ar3o3x3" path="res://src/tooltip/seed_tooltip.tscn" id="1_1p4jw"]
+[ext_resource type="Script" uid="uid://brmae4oges1p8" path="res://src/tooltip/tooltip.gd" id="1_sttyh"]
+
+[node name="TooltipContainer" type="Control"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 200.0
+script = ExtResource("1_sttyh")
+
+[node name="SeedTooltipContainer" parent="." instance=ExtResource("1_1p4jw")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = -29.0
+offset_bottom = -93.0
+grow_horizontal = 1
+grow_vertical = 1

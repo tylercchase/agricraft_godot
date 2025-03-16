@@ -23,5 +23,8 @@ func update_items(items: Array[InventoryManager.ItemSlot]):
         container.add_child(scene)
         if item.item is Plant:
             scene.text = item.item.name + " " + str(item.amount)
+            scene.mouse_entered.connect(Events.emit_tooltip_change.bind(Tooltip.Type.PLANT, item.item))
+
         else:
             scene.text = str(item.item) + " " + str(item.amount)
+        scene.mouse_exited.connect(Events.emit_tooltip_change.bind(Tooltip.Type.NONE, null))

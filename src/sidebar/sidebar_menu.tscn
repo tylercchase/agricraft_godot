@@ -31,7 +31,7 @@ text = "Clear Space"
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
-text = "Construct Trellis"
+text = "Construct Frame"
 
 [node name="InventoryContainer" parent="VBoxContainer" instance=ExtResource("2_vqytk")]
 unique_name_in_owner = true

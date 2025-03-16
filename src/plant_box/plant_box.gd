@@ -12,7 +12,7 @@ var trellis = false
 
 @onready var label: Label = %Label
 @onready var progress_bar: ProgressBar = %ProgressBar
-
+var id
 
 func _ready() -> void:
     mouse_entered.connect(_on_mouse_enter)

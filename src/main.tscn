@@ -189,9 +189,10 @@ script = ExtResource("4_3cfgd")
 plant_grid_container = NodePath("../HBoxContainer/PlantGridContainer")
 plant_manager = NodePath("../PlantManager")
 
-[node name="PlantGrowthManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container")]
+[node name="PlantGrowthManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "plant_manager")]
 script = ExtResource("5_fyndt")
 plant_grid_container = NodePath("../HBoxContainer/PlantGridContainer")
+plant_manager = NodePath("../PlantManager")
 
 [node name="PlantManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "inventory_manager")]
 script = ExtResource("6_kmhfv")

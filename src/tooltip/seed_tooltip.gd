@@ -9,5 +9,5 @@ func setup(data: Plant):
     %DBountyLabel.text = str(data.dominant_gene.bounty)
     %RBountyLabel.text = str(data.recessive_gene.bounty)
 
-    %DMutabilityLabel.text = str(data.dominant_gene.mutation)
-    %RMutabilityLabel.text = str(data.recessive_gene.mutation)
+    # %DMutabilityLabel.text = str(data.dominant_gene.mutation)
+    # %RMutabilityLabel.text = str(data.recessive_gene.mutation)

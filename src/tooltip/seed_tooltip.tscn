@@ -82,6 +82,7 @@ layout_mode = 2
 text = "1"
 
 [node name="GenomePart3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer/GenomeContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -146,6 +147,7 @@ layout_mode = 2
 text = "1"
 
 [node name="GenomePart3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer2/GenomeContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 2

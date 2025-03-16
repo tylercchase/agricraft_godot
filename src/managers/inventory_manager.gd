@@ -21,6 +21,7 @@ func add_item(item):
     else:
         item_slot.id = item # it's a string just use it raw
         # eventually this should probably use a resource for items, but for now it's fineeee
+    print(item_slot.id)
     var check_index = items.find_custom(find_id.bind(item_slot.id))
     if check_index >= 0:
         items[check_index].amount += 1

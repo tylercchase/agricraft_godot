@@ -15,8 +15,17 @@ var items: Array[ItemSlot] = []
 func add_item(item):
     var item_slot = ItemSlot.new()
     item_slot.item = item
-    item_slot.id = item_slot.get_rid()
-    items.push_back(item_slot)
+    if item is Plant: # it's a seed
+        print('test')
+        item_slot.id = item.id
+    else:
+        item_slot.id = item # it's a string just use it raw
+        # eventually this should probably use a resource for items, but for now it's fineeee
+    var check_index = items.find_custom(find_id.bind(item_slot.id))
+    if check_index >= 0:
+        items[check_index].amount += 1
+    else:
+        items.push_back(item_slot)
     inventory_changed.emit(items)
 
 func find_id(item: ItemSlot, id):

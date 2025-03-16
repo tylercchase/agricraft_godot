@@ -24,4 +24,4 @@ func update_items(items: Array[InventoryManager.ItemSlot]):
         if item.item is Plant:
             scene.text = item.item.name
         else:
-            scene.text = str(item.item)
+            scene.text = str(item.item) + str(item.amount)

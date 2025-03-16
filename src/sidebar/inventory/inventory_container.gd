@@ -21,5 +21,7 @@ func update_items(items: Array[InventoryManager.ItemSlot]):
     for item in items:
         var scene : Button = slot_scene.instantiate()
         container.add_child(scene)
-        scene.text = str(item)
-    print('test')
+        if item.item is Plant:
+            scene.text = item.item.name
+        else:
+            scene.text = str(item.item)

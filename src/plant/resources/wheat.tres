@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_ka56c")
-name = "Wheat"
+name = "Wheat Seed"
 id = "wheat"
 display_character = "W"
 grow_ticks = 10

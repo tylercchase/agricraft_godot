@@ -15,7 +15,7 @@ var harvestable = false
 func update_progress():
 	if harvestable:
 		return
-	current_progress += plant_resource.genetics.speed * 25
+	current_progress += plant_resource.dominant_gene.speed * 25
 	set_progress(current_progress)
 	if current_progress >= 100:
 		set_ready_for_harvest()

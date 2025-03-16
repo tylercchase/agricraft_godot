@@ -15,7 +15,7 @@ theme_override_constants/separation = 20
 script = ExtResource("1_6ytax")
 slot_scene = ExtResource("2_30jv2")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 theme_override_constants/separation = 20
 

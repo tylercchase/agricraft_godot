@@ -13,8 +13,8 @@ extends Resource
 
 var output = "Wheat" # probably make something here that fits better
 
-var genetics: Genome = Genome.new() # default to base 1
-
+var dominant_gene: Genome = Genome.new()
+var recessive_gene: Genome = Genome.new()
 
 
 class Genome:

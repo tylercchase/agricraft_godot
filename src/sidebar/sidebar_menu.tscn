@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b41or7dcpr6ox"]
+[gd_scene load_steps=3 format=3 uid="uid://b41or7dcpr6ox"]
 
 [ext_resource type="Script" uid="uid://ck2vpuaba5exs" path="res://src/sidebar/sidebar_menu.gd" id="1_05snc"]
+[ext_resource type="PackedScene" uid="uid://bumsxfixnyqln" path="res://src/sidebar/inventory/inventory_container.tscn" id="2_vqytk"]
 
 [node name="MenuContainer" type="PanelContainer"]
 anchors_preset = 15
@@ -31,3 +32,7 @@ unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 text = "Construct Trellis"
+
+[node name="InventoryContainer" parent="VBoxContainer" instance=ExtResource("2_vqytk")]
+unique_name_in_owner = true
+layout_mode = 2

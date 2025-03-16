@@ -5,7 +5,11 @@ extends PanelContainer
 @onready var remove_button: Button = %RemoveButton
 @onready var trellis_button: Button = %TrellisButton
 
+@onready var inventory_container: InventoryContainer = %InventoryContainer
+
 @export var inventory_manager: InventoryManager
+
+
 
 var current_mode: InteractionManager.Mode = InteractionManager.Mode.NONE
 
@@ -31,3 +35,4 @@ func set_interaction_mode(mode):
 
 func _on_inventory_changed(items: Array[InventoryManager.ItemSlot]):
     print(items)
+    inventory_container.update_items(items)

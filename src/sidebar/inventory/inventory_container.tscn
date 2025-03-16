@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://bumsxfixnyqln"]
+
+[ext_resource type="Script" uid="uid://dhex8fthri8e3" path="res://src/sidebar/inventory/inventory_container.gd" id="1_6ytax"]
+[ext_resource type="PackedScene" uid="uid://b1gyh8b7rrw81" path="res://src/sidebar/inventory/inventory_slot.tscn" id="2_30jv2"]
+
+[node name="InventoryContainer" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+script = ExtResource("1_6ytax")
+slot_scene = ExtResource("2_30jv2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="InventorySlot" parent="HBoxContainer" instance=ExtResource("2_30jv2")]
+layout_mode = 2
+text = "Testqwbeihbqishdvuiohqwveobasiophdbipasbdiubqwpiuebipquwbepiuqwbeipubqipudbipuquhbweuipbqwuipebiuqwb"
+
+[node name="InventorySlot2" parent="HBoxContainer" instance=ExtResource("2_30jv2")]
+layout_mode = 2
+text = "Testqwbeihbqishdvuiohqwveobasiophdbipasbdiubqwpiuebipquwbepiuqwbeipubqipudbipuquhbweuipbqwuipebiuqwb"
+
+[node name="InventorySlot3" parent="HBoxContainer" instance=ExtResource("2_30jv2")]
+layout_mode = 2
+text = "Testqwbeihbqishdvuiohqwveobasiophdbipasbdiubqwpiuebipquwbepiuqwbeipubqipudbipuquhbweuipbqwuipebiuqwb"

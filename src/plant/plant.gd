@@ -21,3 +21,6 @@ class Genome:
     var mutation: int = 1
     var bounty: int = 1
     var speed: int = 1
+
+    func _to_string() -> String:
+        return "%d-%d-%d" % [mutation, bounty, speed]

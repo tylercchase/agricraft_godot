@@ -206,6 +206,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="PanelContainer" parent="Control" instance=ExtResource("8_5mrjc")]
+[node name="TooltipContainer" parent="Control" instance=ExtResource("8_5mrjc")]
 layout_mode = 0
 offset_right = 300.0

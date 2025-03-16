@@ -18,10 +18,11 @@ func _ready() -> void:
 
 
 func _on_mouse_enter():
-    Events.emit_tooltip_change('plant', plant_resource)
+    if plant_resource:
+        Events.emit_tooltip_change(Tooltip.Type.PLANT, plant_resource)
 
 func _on_mouse_exit():
-    Events.emit_tooltip_change('clear', null)
+    Events.emit_tooltip_change(Tooltip.Type.NONE, null)
 
 func update_progress():
     if harvestable:

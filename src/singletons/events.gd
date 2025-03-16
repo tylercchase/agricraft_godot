@@ -17,5 +17,5 @@ func emit_square_clicked(id):
 func emit_selected_item(item: InventoryManager.ItemSlot):
     set_selected_item.emit(item)
 
-func emit_tooltip_change(type, data):
+func emit_tooltip_change(type: Tooltip.Type, data):
     tooltip_change.emit(type, data)

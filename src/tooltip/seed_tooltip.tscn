@@ -23,6 +23,7 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 
 [node name="NameLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Wheat"
 horizontal_alignment = 1
@@ -56,13 +57,40 @@ layout_mode = 2
 
 [node name="GenomePart" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer/GenomeContainer"]
 layout_mode = 2
-alignment = 1
+size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer/GenomeContainer/GenomePart"]
 layout_mode = 2
 text = "Speed: "
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer/GenomeContainer/GenomePart"]
+[node name="DSpeedLabel" type="Label" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer/GenomeContainer/GenomePart"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1"
+
+[node name="GenomePart2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer/GenomeContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer/GenomeContainer/GenomePart2"]
+layout_mode = 2
+text = "Bounty: "
+
+[node name="DBountyLabel" type="Label" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer/GenomeContainer/GenomePart2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1"
+
+[node name="GenomePart3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer/GenomeContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer/GenomeContainer/GenomePart3"]
+layout_mode = 2
+text = "Mutability: "
+
+[node name="DMutabilityLabel" type="Label" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer/GenomeContainer/GenomePart3"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "1"
 
@@ -91,12 +119,42 @@ layout_mode = 2
 
 [node name="GenomePart" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer2/GenomeContainer"]
 layout_mode = 2
-alignment = 1
+size_flags_vertical = 3
+alignment = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer2/GenomeContainer/GenomePart"]
 layout_mode = 2
 text = "Speed: "
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer2/GenomeContainer/GenomePart"]
+[node name="RSpeedLabel" type="Label" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer2/GenomeContainer/GenomePart"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1"
+
+[node name="GenomePart2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer2/GenomeContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer2/GenomeContainer/GenomePart2"]
+layout_mode = 2
+text = "Bounty: "
+
+[node name="RBountyLabel" type="Label" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer2/GenomeContainer/GenomePart2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1"
+
+[node name="GenomePart3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer2/GenomeContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer2/GenomeContainer/GenomePart3"]
+layout_mode = 2
+text = "Mutability: "
+
+[node name="RMutabilityLabel" type="Label" parent="MarginContainer/VBoxContainer/GenomesContainer/MarginContainer2/GenomeContainer/GenomePart3"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "1"

@@ -35,5 +35,7 @@ func _on_square_clicked(id):
         plant_manager.plant_crop(load("res://src/plant/resources/wheat.tres"), id)
     elif current_mode == Mode.NONE:
         plant_manager.harvest_crop(id)
+    elif current_mode == Mode.TRELLIS:
+        plant_manager.setup_trellis(id)
     elif current_mode == Mode.REMOVE:
-        plant_manager.remove_crop(id)
+        plant_manager.clear_space(id)

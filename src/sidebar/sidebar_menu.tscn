@@ -25,7 +25,7 @@ text = "Plant Seed"
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
-text = "Remove Seed	"
+text = "Clear Space"
 
 [node name="TrellisButton" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true

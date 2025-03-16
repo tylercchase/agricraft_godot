@@ -8,6 +8,8 @@ var current_progress = 0
 
 var harvestable = false
 
+var trellis = false
+
 @onready var label: Label = %Label
 @onready var progress_bar: ProgressBar = %ProgressBar
 
@@ -35,6 +37,9 @@ func update_progress():
 func set_progress(value: float):
     progress_bar.value = value
 
+func is_occupied() -> bool:
+    return plant_resource != null or trellis
+
 func has_plant() -> bool:
     return plant_resource != null
 
@@ -47,8 +52,22 @@ func remove_plant():
     label.text = ''
     label.modulate = Color.WHITE
     progress_bar.value = 0
+    harvestable = false
+    current_progress = 0
 
 func set_ready_for_harvest():
     print('ready!')
     harvestable = true
     label.modulate = Color.LIME_GREEN
+
+func add_trellis():
+    $TextureRect.modulate = Color.BROWN
+    trellis = true
+
+func remove_trellis():
+    $TextureRect.modulate = Color.GRAY
+    trellis = false
+
+func clear_spot():
+    remove_trellis()
+    remove_plant()

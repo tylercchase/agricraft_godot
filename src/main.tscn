@@ -224,12 +224,7 @@ inventory_manager = NodePath("../InventoryManager")
 [node name="InventoryManager" type="Node" parent="."]
 script = ExtResource("7_rlaii")
 
-[node name="Control" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TooltipContainer" parent="Control" instance=ExtResource("8_5mrjc")]
+[node name="TooltipContainer" parent="." instance=ExtResource("8_5mrjc")]
 visible = false
 layout_mode = 0
 offset_right = 300.0

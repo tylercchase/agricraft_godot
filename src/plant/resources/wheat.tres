@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Plant" load_steps=2 format=3 uid="uid://d1mm8od10gywy"]
+[gd_resource type="Resource" script_class="Plant" load_steps=3 format=3 uid="uid://d1mm8od10gywy"]
 
+[ext_resource type="Resource" uid="uid://c4tsi2bepmoye" path="res://src/items/resources/wheat.tres" id="1_e34oh"]
 [ext_resource type="Script" uid="uid://bwqcn1on1jm86" path="res://src/plant/plant.gd" id="1_ka56c"]
 
 [resource]
@@ -9,4 +10,5 @@ id = "wheat_seed"
 display_character = "W"
 grow_ticks = 10
 sell_price = 1
+output = ExtResource("1_e34oh")
 metadata/_custom_type_script = "uid://bwqcn1on1jm86"

@@ -13,17 +13,3 @@ offset_bottom = 200.0
 script = ExtResource("1_sttyh")
 plant_tooltip_scene = ExtResource("1_1p4jw")
 item_tooltip_scene = ExtResource("3_4cuop")
-
-[node name="SeedTooltipContainer" parent="." instance=ExtResource("1_1p4jw")]
-visible = false
-layout_mode = 1
-
-[node name="ItemTooltipContainer" parent="." instance=ExtResource("3_4cuop")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 57.0
-offset_bottom = -132.0
-grow_horizontal = 1
-grow_vertical = 1

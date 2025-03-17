@@ -52,7 +52,7 @@ func _on_tooltip_change(type: Type, data):
         visible = true
         var item_tooltip = item_tooltip_scene.instantiate()
         add_child(item_tooltip)
+        item_tooltip.position = Vector2(0,0) # TODO: for some reason the tooltip keeps getting set to way far away, this fixes for now
         item_tooltip.setup(data)
     elif type == Type.NONE:
         visible = false
-    pass

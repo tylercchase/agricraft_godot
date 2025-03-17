@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ck2vpuaba5exs" path="res://src/sidebar/sidebar_menu.gd" id="1_05snc"]
 [ext_resource type="PackedScene" uid="uid://bumsxfixnyqln" path="res://src/sidebar/inventory/inventory_container.tscn" id="2_vqytk"]
 
-[node name="MenuContainer" type="PanelContainer"]
+[node name="MenuContainer" type="CenterContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -12,27 +12,34 @@ grow_vertical = 2
 size_flags_horizontal = 3
 script = ExtResource("1_05snc")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(600, 800)
 layout_mode = 2
 
-[node name="PlantButton" type="Button" parent="VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="PlantButton" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 text = "Plant Seed"
 
-[node name="RemoveButton" type="Button" parent="VBoxContainer"]
+[node name="RemoveButton" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 text = "Clear Space"
 
-[node name="TrellisButton" type="Button" parent="VBoxContainer"]
+[node name="TrellisButton" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 text = "Construct Frame"
 
-[node name="InventoryContainer" parent="VBoxContainer" instance=ExtResource("2_vqytk")]
+[node name="InventoryContainer" parent="PanelContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_vqytk")]
 unique_name_in_owner = true
 layout_mode = 2

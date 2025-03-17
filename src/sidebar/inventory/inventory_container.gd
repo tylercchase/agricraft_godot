@@ -4,7 +4,7 @@ extends Container
 
 @export var slot_scene: PackedScene
 
-@onready var container: Container = $HBoxContainer
+@onready var container: Container = self
 
 
 func _ready() -> void:
@@ -24,7 +24,9 @@ func update_items(items: Array[InventoryManager.ItemSlot]):
         if item.item is Plant:
             scene.text = item.item.name + " " + str(item.amount)
             scene.mouse_entered.connect(Events.emit_tooltip_change.bind(Tooltip.Type.PLANT, item.item))
-
+        elif item.item is InventoryItem:
+            scene.text = item.item.name + " " + str(item.amount) # have a better way of displaying count of items
+            scene.mouse_entered.connect(Events.emit_tooltip_change.bind(Tooltip.Type.ITEM, item.item))
         else:
             scene.text = str(item.item) + " " + str(item.amount)
         scene.mouse_exited.connect(Events.emit_tooltip_change.bind(Tooltip.Type.NONE, null))

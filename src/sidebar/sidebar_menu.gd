@@ -1,4 +1,4 @@
-extends PanelContainer
+extends Container
 
 
 @onready var plant_button: Button = %PlantButton

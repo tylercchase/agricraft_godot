@@ -51,7 +51,6 @@ func check_valid_trellis(box_id):
 
 func create_child_plant(box_id, parents: Array[Plant]):
 
-    var plant_box: PlantBox = plant_grid_container.boxes[box_id]
     # TODO: For now just handle two parents, later possibly more?
     var parent1 = parents[0]
     var parent2 = parents[1]

@@ -17,7 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,178 +25,200 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlantGridContainer" type="GridContainer" parent="HBoxContainer"]
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+current_tab = 0
+
+[node name="Plants" type="HBoxContainer" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="PlantGridContainer" type="GridContainer" parent="TabContainer/Plants"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 size_flags_stretch_ratio = 2.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
 columns = 7
 script = ExtResource("1_gh0ne")
 
-[node name="PanelContainer" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer2" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer2" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer3" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer3" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer4" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer4" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer5" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer5" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer6" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer6" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer7" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer7" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer8" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer8" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer9" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer9" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer10" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer10" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer11" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer11" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer12" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer12" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer13" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer13" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer14" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer14" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer15" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer15" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer16" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer16" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer17" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer17" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer18" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer18" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer19" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer19" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer20" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer20" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer21" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer21" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer22" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer22" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer23" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer23" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer24" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer24" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer25" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer25" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer26" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer26" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer27" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer27" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer28" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer28" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer29" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer29" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer30" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer30" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer31" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer31" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer32" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer32" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer33" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer33" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer34" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer34" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer35" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer35" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer36" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer36" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer37" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer37" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer38" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer38" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer39" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer39" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer40" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer40" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer41" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer41" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer42" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer42" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer43" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer43" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer44" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer44" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer45" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer45" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer46" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer46" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer47" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer47" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer48" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer48" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="PanelContainer49" parent="HBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
+[node name="PanelContainer49" parent="TabContainer/Plants/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="MenuContainer" parent="HBoxContainer" node_paths=PackedStringArray("inventory_manager") instance=ExtResource("3_5q4o7")]
+[node name="MenuContainer" parent="TabContainer/Plants" node_paths=PackedStringArray("inventory_manager") instance=ExtResource("3_5q4o7")]
 layout_mode = 2
-inventory_manager = NodePath("../../InventoryManager")
+inventory_manager = NodePath("../../../InventoryManager")
+
+[node name="Shop" type="CenterContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
 
 [node name="InteractionManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "plant_manager")]
 script = ExtResource("4_3cfgd")
-plant_grid_container = NodePath("../HBoxContainer/PlantGridContainer")
+plant_grid_container = NodePath("../TabContainer/Plants/PlantGridContainer")
 plant_manager = NodePath("../PlantManager")
 
 [node name="PlantGrowthManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "plant_manager")]
 script = ExtResource("5_fyndt")
-plant_grid_container = NodePath("../HBoxContainer/PlantGridContainer")
+plant_grid_container = NodePath("../TabContainer/Plants/PlantGridContainer")
 plant_manager = NodePath("../PlantManager")
 
 [node name="PlantManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "inventory_manager")]
 script = ExtResource("6_kmhfv")
-plant_grid_container = NodePath("../HBoxContainer/PlantGridContainer")
+plant_grid_container = NodePath("../TabContainer/Plants/PlantGridContainer")
 inventory_manager = NodePath("../InventoryManager")
 
 [node name="InventoryManager" type="Node" parent="."]

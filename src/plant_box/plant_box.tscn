@@ -1,18 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7wu05i547vg0"]
+[gd_scene load_steps=4 format=3 uid="uid://b7wu05i547vg0"]
 
 [ext_resource type="Script" uid="uid://dn1v1sxfobq4c" path="res://src/plant_box/plant_box.gd" id="1_85mlm"]
 [ext_resource type="Texture2D" uid="uid://187vmdldpcef" path="res://icon.svg" id="1_nywa7"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85mlm"]
+bg_color = Color(0.282353, 0.282353, 0.282353, 1)
+
 [node name="PlantBox" type="Button"]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(75, 75)
 offset_right = 50.0
 offset_bottom = 50.0
 flat = true
 script = ExtResource("1_85mlm")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.54099, 0.54099, 0.54099, 1)
-z_index = -1
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,6 +33,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_85mlm")
 show_percentage = false
 
 [node name="Label" type="Label" parent="."]

@@ -31,6 +31,7 @@ func _on_interaction_mode_changed(mode: Mode):
 
 
 func _on_square_clicked(id):
+    # use selected item later for stuff
     if current_mode == Mode.PLANT:
         plant_manager.plant_crop(load("res://src/plant/resources/wheat.tres"), id)
     elif current_mode == Mode.NONE:

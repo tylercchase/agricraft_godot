@@ -23,3 +23,11 @@ Events="*res://src/singletons/events.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/theme_gen_save_sync/plugin.cfg")
+
+[gui]
+
+theme/custom="uid://c7x3bwangpf2a"

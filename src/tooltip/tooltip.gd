@@ -13,13 +13,12 @@ enum Type {
 
 @export var plant_tooltip_scene: PackedScene
 @export var item_tooltip_scene: PackedScene # not made yet
-
 func _ready() -> void:
     visible = false
     Events.tooltip_change.connect(_on_tooltip_change)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
     # yoinked code from https://github.com/IndieQuest/Modular-tooltip/blob/master/Tooltip.gd
     # can be better probs but I really don't want to look at this yet
     if !visible:
@@ -49,6 +48,11 @@ func _on_tooltip_change(type: Type, data):
         var plant_tooltip = plant_tooltip_scene.instantiate()
         add_child(plant_tooltip)
         plant_tooltip.setup(data)
+    elif type == Type.ITEM:
+        visible = true
+        var item_tooltip = item_tooltip_scene.instantiate()
+        add_child(item_tooltip)
+        item_tooltip.setup(data)
     elif type == Type.NONE:
         visible = false
     pass

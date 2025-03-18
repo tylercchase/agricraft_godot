@@ -245,12 +245,13 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="InteractionManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "plant_manager", "inventory_manager", "mutation_button")]
+[node name="InteractionManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "plant_manager", "inventory_manager", "mutation_button", "clear_button")]
 script = ExtResource("4_3cfgd")
 plant_grid_container = NodePath("../TabContainer/Plants/VBoxContainer/PlantGridContainer")
 plant_manager = NodePath("../PlantManager")
 inventory_manager = NodePath("../InventoryManager")
 mutation_button = NodePath("../TabContainer/Plants/VBoxContainer/CenterContainer2/MarginContainer/HBoxContainer/MutationButton")
+clear_button = NodePath("../TabContainer/Plants/VBoxContainer/CenterContainer2/MarginContainer/HBoxContainer/ClearButton")
 
 [node name="PlantGrowthManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "plant_manager")]
 script = ExtResource("5_fyndt")

@@ -18,6 +18,7 @@ func _ready() -> void:
     
     # add a starting out seed for now
     add_item(ResourceLoader.load('res://src/plant/resources/wheat.tres'))
+    add_item(ResourceLoader.load('res://src/plant/resources/wheat.tres'))
 
     Events.set_selected_item.connect(_on_selected_item)
 

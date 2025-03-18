@@ -12,6 +12,19 @@ class ItemSlot extends Resource:
 
 var items: Array[ItemSlot] = []
 
+var selected_item: ItemSlot
+
+func _ready() -> void:
+    
+    # add a starting out seed for now
+    add_item(load('res://src/plant/resources/wheat.tres'))
+
+    Events.set_selected_item.connect(_on_selected_item)
+
+
+func _on_selected_item(item):
+    selected_item = item
+
 func add_item(item):
     var item_slot = ItemSlot.new()
     item_slot.item = item
@@ -38,5 +51,8 @@ func remove_item(item_id, amount):
     var index = items.find_custom(find_id.bind(item_id))
     items[index].amount -= 1
     if items[index].amount <= 0:
+        if items[index].id == selected_item.id:
+            Events.emit_selected_item(null)
         items.remove_at(index)
+
     inventory_changed.emit(items)

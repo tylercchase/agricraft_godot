@@ -7,9 +7,17 @@ extends Container
 @onready var container: Container = self
 
 
+var selected_item: InventoryManager.ItemSlot
+
 func _ready() -> void:
     for child in container.get_children():
         child.queue_free()
+    Events.set_selected_item.connect(_on_selected_item)
+
+
+func _on_selected_item(item):
+    selected_item = item
+    print(item)
 
 func update_items(items: Array[InventoryManager.ItemSlot]):
     print(items)
@@ -22,11 +30,19 @@ func update_items(items: Array[InventoryManager.ItemSlot]):
         var scene : Button = slot_scene.instantiate()
         container.add_child(scene)
         if item.item is Plant:
-            scene.text = item.item.name + " " + str(item.amount)
+            scene.text = item.item.display_character + " " + str(item.amount)
             scene.mouse_entered.connect(Events.emit_tooltip_change.bind(Tooltip.Type.PLANT, item.item))
         elif item.item is InventoryItem:
-            scene.text = item.item.name + " " + str(item.amount) # have a better way of displaying count of items
+            scene.text = item.item.display_character + " " + str(item.amount) # have a better way of displaying count of items
             scene.mouse_entered.connect(Events.emit_tooltip_change.bind(Tooltip.Type.ITEM, item.item))
         else:
             scene.text = str(item.item) + " " + str(item.amount)
         scene.mouse_exited.connect(Events.emit_tooltip_change.bind(Tooltip.Type.NONE, null))
+        scene.pressed.connect(_on_item_pressed.bind(item))
+
+
+func _on_item_pressed(item):
+    if selected_item && item.id == selected_item.id:
+        Events.emit_selected_item(null)
+    else:
+        Events.emit_selected_item(item)

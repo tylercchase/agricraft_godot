@@ -206,10 +206,11 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="InteractionManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "plant_manager")]
+[node name="InteractionManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "plant_manager", "inventory_manager")]
 script = ExtResource("4_3cfgd")
 plant_grid_container = NodePath("../TabContainer/Plants/PlantGridContainer")
 plant_manager = NodePath("../PlantManager")
+inventory_manager = NodePath("../InventoryManager")
 
 [node name="PlantGrowthManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "plant_manager")]
 script = ExtResource("5_fyndt")

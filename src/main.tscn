@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dlr6x31phuvus"]
+[gd_scene load_steps=9 format=3 uid="uid://dlr6x31phuvus"]
 
 [ext_resource type="PackedScene" uid="uid://b7wu05i547vg0" path="res://src/plant_box/plant_box.tscn" id="1_eewff"]
 [ext_resource type="Script" uid="uid://wkwq7hadg7p6" path="res://src/plant_box/plant_grid_container.gd" id="1_gh0ne"]
@@ -8,12 +8,6 @@
 [ext_resource type="Script" uid="uid://gk71eqjiho7u" path="res://src/managers/plant_manager.gd" id="6_kmhfv"]
 [ext_resource type="Script" uid="uid://cg42us3h16aru" path="res://src/managers/inventory_manager.gd" id="7_rlaii"]
 [ext_resource type="PackedScene" uid="uid://q7vq66m46nni" path="res://src/tooltip/tooltip.tscn" id="8_5mrjc"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mrjc"]
-bg_color = Color(0.386823, 0.23359, 0.168512, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kf8lf"]
-bg_color = Color(0.418205, 0.123637, 0.242026, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -208,34 +202,6 @@ layout_mode = 2
 [node name="PanelContainer49" parent="TabContainer/Plants/VBoxContainer/PlantGridContainer" instance=ExtResource("1_eewff")]
 layout_mode = 2
 
-[node name="CenterContainer2" type="CenterContainer" parent="TabContainer/Plants/VBoxContainer"]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Plants/VBoxContainer/CenterContainer2"]
-layout_mode = 2
-theme_override_constants/margin_left = 14
-theme_override_constants/margin_top = -293
-
-[node name="HBoxContainer" type="VBoxContainer" parent="TabContainer/Plants/VBoxContainer/CenterContainer2/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="MutationButton" type="Button" parent="TabContainer/Plants/VBoxContainer/CenterContainer2/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-tooltip_text = "Place a mutation spot"
-theme_override_styles/normal = SubResource("StyleBoxFlat_5mrjc")
-toggle_mode = true
-text = "M"
-
-[node name="ClearButton" type="Button" parent="TabContainer/Plants/VBoxContainer/CenterContainer2/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-tooltip_text = "Clear a space of its occupants"
-theme_override_styles/normal = SubResource("StyleBoxFlat_kf8lf")
-toggle_mode = true
-text = "C"
-
 [node name="MenuContainer" type="VBoxContainer" parent="TabContainer/Plants"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -273,13 +239,11 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="InteractionManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "plant_manager", "inventory_manager", "mutation_button", "clear_button")]
+[node name="InteractionManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "plant_manager", "inventory_manager")]
 script = ExtResource("4_3cfgd")
 plant_grid_container = NodePath("../TabContainer/Plants/VBoxContainer/PlantGridContainer")
 plant_manager = NodePath("../PlantManager")
 inventory_manager = NodePath("../InventoryManager")
-mutation_button = NodePath("../TabContainer/Plants/VBoxContainer/CenterContainer2/MarginContainer/HBoxContainer/MutationButton")
-clear_button = NodePath("../TabContainer/Plants/VBoxContainer/CenterContainer2/MarginContainer/HBoxContainer/ClearButton")
 
 [node name="PlantGrowthManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "plant_manager")]
 script = ExtResource("5_fyndt")

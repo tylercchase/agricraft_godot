@@ -21,6 +21,8 @@ func remove_crop(box_id):
     if box.plant_resource:
         inventory_manager.add_item(box.plant_resource) # add the seed
         box.remove_plant()
+    Events.emit_tooltip_change(Tooltip.Type.NONE, null)
+    
 
 func clear_space(box_id):
     var box: PlantBox = plant_grid_container.get_box(box_id)
@@ -29,6 +31,8 @@ func clear_space(box_id):
         box.remove_plant()
     else:
         box.clear_spot()
+    
+    
 
 func setup_trellis(box_id):
     var box: PlantBox = plant_grid_container.get_box(box_id)

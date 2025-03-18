@@ -11,11 +11,15 @@ func _ready() -> void:
     var temp_boxes = get_children()
     for i in len(temp_boxes):
         boxes.append(temp_boxes[i] as PlantBox)
-        boxes[i].pressed.connect(_on_box_pressed.bind(i))
+        boxes[i].gui_input.connect(_on_box_pressed.bind(i))
         boxes[i].id = i
 
-func _on_box_pressed(id):
-    Events.emit_square_clicked(id)
+func _on_box_pressed(event, id):
+    if event is InputEventMouseButton and event.pressed:
+        var mouse_output = MOUSE_BUTTON_LEFT
+        if event.button_index == MOUSE_BUTTON_RIGHT:
+            mouse_output = MOUSE_BUTTON_RIGHT
+        Events.emit_square_clicked(id, mouse_output)
 
 func get_box(id) -> PlantBox :
     return boxes[id]

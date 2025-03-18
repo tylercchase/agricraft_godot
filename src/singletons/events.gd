@@ -11,8 +11,8 @@ signal tooltip_change
 func emit_interaction_mode_changed(mode):
     interaction_mode_changed.emit(mode)
 
-func emit_square_clicked(id):
-    square_clicked.emit(id)
+func emit_square_clicked(id, mouse: MouseButton):
+    square_clicked.emit(id, mouse)
 
 func emit_selected_item(item: InventoryManager.ItemSlot):
     set_selected_item.emit(item)

@@ -61,11 +61,11 @@ func set_ready_for_harvest():
     label.modulate = Color.LIME_GREEN
 
 func add_trellis():
-    $TextureRect.modulate = Color.BROWN
+    modulate = Color('7c6d81')
     trellis = true
 
 func remove_trellis():
-    $TextureRect.modulate = Color.GRAY
+    modulate = Color.WHITE
     trellis = false
 
 func clear_spot():

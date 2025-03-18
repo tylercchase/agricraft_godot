@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://b41or7dcpr6ox"]
+[gd_scene load_steps=2 format=3 uid="uid://b41or7dcpr6ox"]
 
-[ext_resource type="Script" uid="uid://ck2vpuaba5exs" path="res://src/sidebar/sidebar_menu.gd" id="1_05snc"]
 [ext_resource type="PackedScene" uid="uid://bumsxfixnyqln" path="res://src/sidebar/inventory/inventory_container.tscn" id="2_vqytk"]
 
 [node name="MenuContainer" type="VBoxContainer"]
@@ -11,7 +10,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 alignment = 1
-script = ExtResource("1_05snc")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2

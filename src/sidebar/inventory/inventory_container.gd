@@ -5,7 +5,7 @@ extends Container
 @export var slot_scene: PackedScene
 
 @onready var container: Container = self
-
+@export var inventory_manager: InventoryManager
 
 var selected_item: InventoryManager.ItemSlot
 
@@ -13,6 +13,7 @@ func _ready() -> void:
     for child in container.get_children():
         child.queue_free()
     Events.set_selected_item.connect(_on_selected_item)
+    inventory_manager.inventory_changed.connect(update_items)
 
 
 func _on_selected_item(item):

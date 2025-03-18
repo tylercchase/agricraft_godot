@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
 env:
   GODOT_VERSION: "4.4.1"
   GODOT_STATUS: "rc1"
@@ -53,6 +52,7 @@ jobs:
   deploy-to-itchio-web:
     runs-on: ubuntu-latest
     needs: export-game
+    environment: "Itch.io Deployment"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4

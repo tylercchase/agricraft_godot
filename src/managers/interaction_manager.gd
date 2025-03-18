@@ -6,11 +6,13 @@ extends Node
 @export var plant_manager: PlantManager
 @export var inventory_manager: InventoryManager
 
+@export var mutation_button: Button
+@export var clear_button: Button
+
 var selected_item: InventoryManager.ItemSlot = null
 
 enum Mode {
 	NONE,
-	PLANT,
 	REMOVE,
 	TRELLIS,
 }
@@ -25,8 +27,11 @@ func _ready() -> void:
 
 
 
+
 func set_active_item(selected: InventoryManager.ItemSlot):
     selected_item = selected
+    if selected:
+        current_mode = Mode.NONE
 
 
 func _on_interaction_mode_changed(mode: Mode):
@@ -43,7 +48,7 @@ func _on_square_clicked(id):
             # just to avoid clicking and _nothing_ happening on a square
             # eventually change so there's more handling of stuff
             # right now it's just too hard to tell what's going on
-            Events.emit_set_selected_item(null)
+            Events.emit_selected_item(null)
             plant_manager.harvest_crop(id)
     else:
         plant_manager.harvest_crop(id)

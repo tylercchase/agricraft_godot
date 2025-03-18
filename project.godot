@@ -26,8 +26,9 @@ window/size/viewport_height=1080
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/theme_gen_save_sync/plugin.cfg")
+enabled=PackedStringArray()
 
 [gui]
 
 theme/custom="uid://c7x3bwangpf2a"
+theme/custom_font="uid://coim4tynqgcvt"

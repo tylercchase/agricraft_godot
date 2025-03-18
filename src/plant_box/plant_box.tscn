@@ -7,7 +7,7 @@
 bg_color = Color(0.282353, 0.282353, 0.282353, 1)
 
 [node name="PlantBox" type="Button"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(50, 50)
 offset_right = 50.0
 offset_bottom = 50.0
 flat = true

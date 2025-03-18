@@ -3,32 +3,38 @@
 [ext_resource type="Script" uid="uid://ck2vpuaba5exs" path="res://src/sidebar/sidebar_menu.gd" id="1_05snc"]
 [ext_resource type="PackedScene" uid="uid://bumsxfixnyqln" path="res://src/sidebar/inventory/inventory_container.tscn" id="2_vqytk"]
 
-[node name="MenuContainer" type="CenterContainer"]
+[node name="MenuContainer" type="VBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+alignment = 1
 script = ExtResource("1_05snc")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(600, 800)
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer/ScrollContainer"]
 layout_mode = 2
 
-[node name="InventoryContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_vqytk")]
+[node name="InventoryContainer" parent="HBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_vqytk")]
 unique_name_in_owner = true
 layout_mode = 2

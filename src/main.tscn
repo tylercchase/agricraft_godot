@@ -34,9 +34,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
-current_tab = 0
+current_tab = 1
 
 [node name="Plants" type="HBoxContainer" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -230,14 +231,33 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="InventoryContainer" parent="TabContainer/Plants/MenuContainer/HBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("inventory_manager") instance=ExtResource("3_5mrjc")]
-unique_name_in_owner = true
 layout_mode = 2
 inventory_manager = NodePath("../../../../../../../../../InventoryManager")
 
-[node name="Shop" type="CenterContainer" parent="TabContainer"]
-visible = false
+[node name="Shop" type="MarginContainer" parent="TabContainer"]
 layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 metadata/_tab_index = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Shop"]
+layout_mode = 2
+
+[node name="Control" type="HBoxContainer" parent="TabContainer/Shop/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TabContainer/Shop/HBoxContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Shop coming soon!"
+horizontal_alignment = 1
+
+[node name="InventoryContainer" parent="TabContainer/Shop/HBoxContainer" node_paths=PackedStringArray("inventory_manager") instance=ExtResource("3_5mrjc")]
+layout_mode = 2
+inventory_manager = NodePath("../../../../InventoryManager")
 
 [node name="InteractionManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "plant_manager", "inventory_manager")]
 script = ExtResource("4_3cfgd")

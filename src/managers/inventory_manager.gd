@@ -26,7 +26,7 @@ func _ready() -> void:
 func _on_selected_item(item):
     selected_item = item
 
-func add_item(item):
+func add_item(item, count=1):
     var item_slot = ItemSlot.new()
     item_slot.item = item
     if item is Plant: # it's a seed
@@ -40,8 +40,9 @@ func add_item(item):
     print(item_slot.id)
     var check_index = items.find_custom(find_id.bind(item_slot.id))
     if check_index >= 0:
-        items[check_index].amount += 1
+        items[check_index].amount += count
     else:
+        item_slot.amount = count
         items.push_back(item_slot)
     inventory_changed.emit(items)
 

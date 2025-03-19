@@ -29,7 +29,13 @@ func _on_mouse_exit():
 func update_progress():
     if harvestable:
         return
-    current_progress += plant_resource.dominant_gene.speed * 25
+    current_progress += plant_resource.dominant_gene.speed * 5
+    set_progress(current_progress)
+    if current_progress >= 100:
+        set_ready_for_harvest()
+
+func speed_up():
+    current_progress += plant_resource.dominant_gene.speed * 5
     set_progress(current_progress)
     if current_progress >= 100:
         set_ready_for_harvest()

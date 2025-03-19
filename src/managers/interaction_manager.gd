@@ -58,6 +58,9 @@ func _on_square_clicked(id, mouse_button):
                 plant_manager.harvest_crop(id)
         elif box.harvestable:
             plant_manager.harvest_crop(id)
+        elif box.plant_resource:
+            plant_manager.speed_up(id)
+            pass
     elif !box.is_occupied():
             plant_manager.setup_trellis(id)
     else:

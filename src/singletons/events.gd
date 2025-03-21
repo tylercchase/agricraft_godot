@@ -22,5 +22,5 @@ func emit_selected_item(item: InventoryManager.ItemSlot):
 func emit_tooltip_change(type: Tooltip.Type, data):
     tooltip_change.emit(type, data)
 
-func emit_buy_item(item: InventoryItem, amount: int):
+func emit_buy_item(item: Resource, amount: int):
     buy_item.emit(item, amount)

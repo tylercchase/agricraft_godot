@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dlr6x31phuvus"]
+[gd_scene load_steps=13 format=3 uid="uid://dlr6x31phuvus"]
 
 [ext_resource type="PackedScene" uid="uid://b7wu05i547vg0" path="res://src/plant_box/plant_box.tscn" id="1_eewff"]
 [ext_resource type="Script" uid="uid://wkwq7hadg7p6" path="res://src/plant_box/plant_grid_container.gd" id="1_gh0ne"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cdkcky2vpdtn8" path="res://src/managers/interaction_manager.gd" id="4_3cfgd"]
 [ext_resource type="PackedScene" uid="uid://bxg03y15ggqqr" path="res://src/shop/buy_item/shop_buy_item_container.tscn" id="4_kf8lf"]
 [ext_resource type="Script" uid="uid://i7m14kcvvg8e" path="res://src/managers/plant_growth_manager.gd" id="5_fyndt"]
+[ext_resource type="Resource" uid="uid://d1mm8od10gywy" path="res://src/plant/resources/wheat.tres" id="5_kqbth"]
 [ext_resource type="Script" uid="uid://dkff2xlrw5sl5" path="res://src/header/currency_label.gd" id="5_mgm53"]
 [ext_resource type="PackedScene" uid="uid://1t4k8725kuwa" path="res://src/shop/buy_item/sell_container.tscn" id="5_uewes"]
 [ext_resource type="Script" uid="uid://gk71eqjiho7u" path="res://src/managers/plant_manager.gd" id="6_kmhfv"]
@@ -284,6 +285,7 @@ alignment = 1
 
 [node name="ShopBuyItemContainer" parent="TabContainer/Shop/HBoxContainer/Control" instance=ExtResource("4_kf8lf")]
 layout_mode = 2
+item_to_purchase = ExtResource("5_kqbth")
 
 [node name="PanelContainer" parent="TabContainer/Shop/HBoxContainer" node_paths=PackedStringArray("inventory_manager") instance=ExtResource("5_uewes")]
 layout_mode = 2
@@ -292,7 +294,7 @@ inventory_manager = NodePath("../../../../InventoryManager")
 [node name="MenuContainer" type="VBoxContainer" parent="TabContainer/Shop/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.65
+size_flags_stretch_ratio = 0.59
 alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Shop/HBoxContainer/MenuContainer"]

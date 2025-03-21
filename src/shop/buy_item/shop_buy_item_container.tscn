@@ -10,7 +10,7 @@ shadow_offset = Vector2(1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mrjc"]
 bg_color = Color(0.133196, 0.133196, 0.133196, 1)
 
-[node name="PanelContainer" type="PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" node_paths=PackedStringArray("name_label", "preview_label", "preview_container", "purchase_1_button")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -26,6 +26,10 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_khc5n")
 script = ExtResource("1_khc5n")
+name_label = NodePath("MarginContainer/ShopBuyItemContainer/Label")
+preview_label = NodePath("MarginContainer/ShopBuyItemContainer/PanelContainer/Label2")
+preview_container = NodePath("MarginContainer/ShopBuyItemContainer/PanelContainer")
+purchase_1_button = NodePath("MarginContainer/ShopBuyItemContainer/Purchase1Button")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

@@ -15,7 +15,6 @@ var items: Array[ItemSlot] = []
 var selected_item: ItemSlot
 
 func _ready() -> void:
-    
     # add a starting out seed for now
     add_item(ResourceLoader.load('res://src/plant/resources/wheat.tres'))
     add_item(ResourceLoader.load('res://src/plant/resources/wheat.tres'))
@@ -24,7 +23,7 @@ func _ready() -> void:
     Events.buy_item.connect(_on_buy_item)
 
 
-func _on_buy_item(item: InventoryItem, amount: int):
+func _on_buy_item(item: Resource, amount: int):
     add_item(item, amount)
 
 

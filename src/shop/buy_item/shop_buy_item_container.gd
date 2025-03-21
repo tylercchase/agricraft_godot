@@ -1,11 +1,17 @@
 extends Container
 
 
-var item_to_purchase: InventoryItem
 
-@export var price_per = 5
 
-@onready var purchase_1_button = %Purchase1Button
+@export var item_to_purchase: Resource
+@export var price_per = 1
+
+
+@export_category('Internal')
+@export var name_label: Label
+@export var preview_label: Label
+@export var preview_container: Container
+@export var purchase_1_button: Button
 
 
 func _ready() -> void:
@@ -13,6 +19,14 @@ func _ready() -> void:
     # check_if_buyable(PlayerStats.currency)
     update_buttons(PlayerStats.currency)
     purchase_1_button.pressed.connect(_on_purchase_button.bind(1))
+    name_label.text = item_to_purchase.name
+    preview_label.text = item_to_purchase.display_character
+    purchase_1_button.text = 'Buy ' + str(price_per) + 'g'
+    var type = Tooltip.Type.PLANT
+    if item_to_purchase is InventoryItem:
+        type = Tooltip.Type.ITEM
+    preview_container.mouse_entered.connect(Events.emit_tooltip_change.bind(type, item_to_purchase))
+    preview_container.mouse_exited.connect(Events.emit_tooltip_change.bind(Tooltip.Type.NONE, null))
 
 func _on_purchase_button(amount):
     purchase_item(amount)

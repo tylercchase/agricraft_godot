@@ -26,11 +26,20 @@ func _ready() -> void:
 
 
 func update_menu():
-    var disabled = selected_item == null
+    var disabled = selected_item == null || !selected_item.item.get('base_sell_price')
     sell_one_button.disabled = disabled
     sell_half_button.disabled = disabled
     sell_all_button.disabled = disabled
-
+    if selected_item != null:
+        pass
+        name_label.text = selected_item.item.name
+        if selected_item.item.get('base_sell_price'):
+            price_label.text = str(selected_item.item.base_sell_price) + ' g'
+        else:
+            price_label.text = 'N/A'
+    else:
+        name_label.text = ''
+        price_label.text = ''
 
 
 func sell_item(modifier: Modifier):
@@ -41,12 +50,11 @@ func sell_item(modifier: Modifier):
             pass
         Modifier.ALL:
             pass
-    
+
 
 func _on_set_selected_item(new_selected_item):
-    if new_selected_item && new_selected_item.item is InventoryItem && new_selected_item.item.base_sell_price:
+    if new_selected_item != null:
         selected_item = new_selected_item
-        print('selected a thing we can sell!')
     else:
         selected_item = null
     update_menu()

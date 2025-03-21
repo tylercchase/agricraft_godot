@@ -6,6 +6,6 @@ var currency = 0:
         get:
             return currency
         set(value):
-            currency_changed.emit(currency)
+            currency_changed.emit(value)
             currency = value
 

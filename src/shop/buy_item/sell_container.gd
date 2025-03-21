@@ -43,17 +43,20 @@ func update_menu():
 
 
 func sell_item(modifier: Modifier):
+
+    var amount_to_sell = 1
     match modifier:
         Modifier.ONE:
-            pass
+            amount_to_sell = 1
         Modifier.HALF:
-            pass
+            amount_to_sell = selected_item.count / 2
         Modifier.ALL:
-            pass
-
+            amount_to_sell = selected_item.count
+    PlayerStats.currency += selected_item.item.base_sell_price * amount_to_sell
+    inventory_manager.remove_item(selected_item.item.id, amount_to_sell)
 
 func _on_set_selected_item(new_selected_item):
-    if new_selected_item != null:
+    if new_selected_item != null && new_selected_item is InventoryManager.ItemSlot:
         selected_item = new_selected_item
     else:
         selected_item = null

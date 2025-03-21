@@ -62,7 +62,6 @@ func remove_plant():
     current_progress = 0
 
 func set_ready_for_harvest():
-    print('ready!')
     harvestable = true
     label.modulate = Color.LIME_GREEN
 

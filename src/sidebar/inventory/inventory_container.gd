@@ -18,10 +18,8 @@ func _ready() -> void:
 
 func _on_selected_item(item):
     selected_item = item
-    print(item)
 
 func update_items(items: Array[InventoryManager.ItemSlot]):
-    print(items)
 	# just make a whole new thing, can be optimized in the future
 	# works for now tho
     for child in container.get_children():

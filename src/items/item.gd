@@ -7,3 +7,4 @@ extends Resource
 @export_multiline var description = ''
 
 @export var display_character = '?'
+@export var base_sell_price = 1

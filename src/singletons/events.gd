@@ -8,6 +8,8 @@ signal set_selected_item # this might become less of a thing when starting to us
 
 signal tooltip_change
 
+signal buy_item
+
 func emit_interaction_mode_changed(mode):
     interaction_mode_changed.emit(mode)
 
@@ -19,3 +21,6 @@ func emit_selected_item(item: InventoryManager.ItemSlot):
 
 func emit_tooltip_change(type: Tooltip.Type, data):
     tooltip_change.emit(type, data)
+
+func emit_buy_item(item: InventoryItem, amount: int):
+    buy_item.emit(item, amount)

@@ -61,7 +61,6 @@ func create_child_plant(box_id, parents: Array[Plant]):
     plant_resource.dominant_gene = genomes[0]
     plant_resource.recessive_gene = genomes[1]
 
-    print(genomes) # do something here later, probably plant it where it was
     plant_manager.clear_space(box_id)
     plant_manager.plant_crop(plant_resource, box_id)
 

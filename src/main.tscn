@@ -39,6 +39,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 current_tab = 1
+tab_focus_mode = 0
 
 [node name="Plants" type="Control" parent="TabContainer"]
 visible = false

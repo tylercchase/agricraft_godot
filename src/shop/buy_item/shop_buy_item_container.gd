@@ -16,7 +16,6 @@ extends Container
 
 func _ready() -> void:
     PlayerStats.currency_changed.connect(_on_currency_changed)
-    # check_if_buyable(PlayerStats.currency)
     update_buttons(PlayerStats.currency)
     purchase_1_button.pressed.connect(_on_purchase_button.bind(1))
     name_label.text = item_to_purchase.name
@@ -27,6 +26,7 @@ func _ready() -> void:
         type = Tooltip.Type.ITEM
     preview_container.mouse_entered.connect(Events.emit_tooltip_change.bind(type, item_to_purchase))
     preview_container.mouse_exited.connect(Events.emit_tooltip_change.bind(Tooltip.Type.NONE, null))
+    update_buttons(PlayerStats.currency)
 
 func _on_purchase_button(amount):
     purchase_item(amount)

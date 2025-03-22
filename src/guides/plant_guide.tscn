@@ -39,6 +39,9 @@ text = "To plant a seed, click a seed in your inventory to select it then click 
 
 There will be a progress bar that shows up on the square, and when the plant is ready to harvest the label will turn green.
 
+Clicking on the plant while it is growing will speed up the progress.
+
+
 In order for a plant to crossbreed with another plant, you need to setup a mutation spot (right click) in between two plants with only 2 plants touching the sides of the square. The plants must be fully grown in order to crossbreed with eachother.
 
 Green=Plant, Purple=Mutation Spot

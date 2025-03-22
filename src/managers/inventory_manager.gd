@@ -18,7 +18,7 @@ func _ready() -> void:
     # add a starting out seed for now
     add_item(ResourceLoader.load('res://src/plant/resources/wheat.tres'))
     add_item(ResourceLoader.load('res://src/plant/resources/wheat.tres'))
-    add_item(ResourceLoader.load("res://src/items/resources/wheat.tres"))
+    # add_item(ResourceLoader.load("res://src/items/resources/wheat.tres"),4)
     Events.set_selected_item.connect(_on_selected_item)
     Events.buy_item.connect(_on_buy_item)
 
@@ -51,9 +51,9 @@ func add_item(item, count=1):
 func find_id(item: ItemSlot, id):
     return item.id == id
 
-func remove_item(item_id, amount):
+func remove_item(item_id, amount=1):
     var index = items.find_custom(find_id.bind(item_id))
-    items[index].amount -= 1
+    items[index].amount -= amount
     if items[index].amount <= 0:
         if items[index].id == selected_item.id:
             Events.emit_selected_item(null)

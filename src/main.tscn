@@ -41,10 +41,11 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
-current_tab = 0
+current_tab = 1
 tab_focus_mode = 0
 
 [node name="Plants" type="Control" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -274,7 +275,6 @@ layout_mode = 2
 inventory_manager = NodePath("../../../../../../../../../../../InventoryManager")
 
 [node name="Shop" type="MarginContainer" parent="TabContainer"]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10

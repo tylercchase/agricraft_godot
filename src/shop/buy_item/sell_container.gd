@@ -43,15 +43,14 @@ func update_menu():
 
 
 func sell_item(modifier: Modifier):
-
-    var amount_to_sell = 1
+    var amount_to_sell
     match modifier:
         Modifier.ONE:
             amount_to_sell = 1
         Modifier.HALF:
-            amount_to_sell = selected_item.count / 2
+            amount_to_sell = selected_item.amount / 2
         Modifier.ALL:
-            amount_to_sell = selected_item.count
+            amount_to_sell = selected_item.amount
     PlayerStats.currency += selected_item.item.base_sell_price * amount_to_sell
     inventory_manager.remove_item(selected_item.item.id, amount_to_sell)
 

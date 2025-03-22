@@ -10,6 +10,8 @@ signal tooltip_change
 
 signal buy_item
 
+signal guide_open
+
 func emit_interaction_mode_changed(mode):
     interaction_mode_changed.emit(mode)
 
@@ -24,3 +26,6 @@ func emit_tooltip_change(type: Tooltip.Type, data):
 
 func emit_buy_item(item: Resource, amount: int):
     buy_item.emit(item, amount)
+
+func emit_guide_open(guide: String):
+    guide_open.emit(guide)

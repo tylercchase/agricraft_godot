@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dlr6x31phuvus"]
+[gd_scene load_steps=16 format=3 uid="uid://dlr6x31phuvus"]
 
 [ext_resource type="PackedScene" uid="uid://b7wu05i547vg0" path="res://src/plant_box/plant_box.tscn" id="1_eewff"]
 [ext_resource type="Script" uid="uid://wkwq7hadg7p6" path="res://src/plant_box/plant_grid_container.gd" id="1_gh0ne"]
 [ext_resource type="PackedScene" uid="uid://bumsxfixnyqln" path="res://src/sidebar/inventory/inventory_container.tscn" id="3_5mrjc"]
+[ext_resource type="Script" uid="uid://mupn3cxx3cu1" path="res://src/guides/guide_button.gd" id="3_mlv6i"]
 [ext_resource type="Script" uid="uid://cdkcky2vpdtn8" path="res://src/managers/interaction_manager.gd" id="4_3cfgd"]
 [ext_resource type="PackedScene" uid="uid://bxg03y15ggqqr" path="res://src/shop/buy_item/shop_buy_item_container.tscn" id="4_kf8lf"]
 [ext_resource type="Script" uid="uid://i7m14kcvvg8e" path="res://src/managers/plant_growth_manager.gd" id="5_fyndt"]
@@ -13,6 +14,7 @@
 [ext_resource type="Script" uid="uid://cg42us3h16aru" path="res://src/managers/inventory_manager.gd" id="7_rlaii"]
 [ext_resource type="PackedScene" uid="uid://q7vq66m46nni" path="res://src/tooltip/tooltip.tscn" id="8_5mrjc"]
 [ext_resource type="PackedScene" uid="uid://7570ux4il3p3" path="res://src/guides/plant_guide.tscn" id="8_srxbw"]
+[ext_resource type="Script" uid="uid://bxo5knqet1j5l" path="res://src/guides/guide_manager.gd" id="13_d3u4l"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -229,6 +231,8 @@ size_flags_horizontal = 8
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 text = "?"
+script = ExtResource("3_mlv6i")
+id = "plants"
 
 [node name="MenuContainer" type="VBoxContainer" parent="TabContainer/Plants/Plants"]
 layout_mode = 2
@@ -377,7 +381,6 @@ layout_mode = 0
 offset_right = 300.0
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -386,5 +389,13 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="PlantGuide" parent="CenterContainer" instance=ExtResource("8_srxbw")]
+[node name="Control" type="Control" parent="CenterContainer"]
+custom_minimum_size = Vector2(600, 400)
 layout_mode = 2
+mouse_filter = 2
+script = ExtResource("13_d3u4l")
+
+[node name="PlantGuide" parent="CenterContainer/Control" instance=ExtResource("8_srxbw")]
+visible = false
+layout_mode = 1
+id = "plants"

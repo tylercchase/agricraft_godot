@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dlr6x31phuvus"]
+[gd_scene load_steps=14 format=3 uid="uid://dlr6x31phuvus"]
 
 [ext_resource type="PackedScene" uid="uid://b7wu05i547vg0" path="res://src/plant_box/plant_box.tscn" id="1_eewff"]
 [ext_resource type="Script" uid="uid://wkwq7hadg7p6" path="res://src/plant_box/plant_grid_container.gd" id="1_gh0ne"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://gk71eqjiho7u" path="res://src/managers/plant_manager.gd" id="6_kmhfv"]
 [ext_resource type="Script" uid="uid://cg42us3h16aru" path="res://src/managers/inventory_manager.gd" id="7_rlaii"]
 [ext_resource type="PackedScene" uid="uid://q7vq66m46nni" path="res://src/tooltip/tooltip.tscn" id="8_5mrjc"]
+[ext_resource type="PackedScene" uid="uid://7570ux4il3p3" path="res://src/guides/plant_guide.tscn" id="8_srxbw"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -38,11 +39,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
-current_tab = 1
+current_tab = 0
 tab_focus_mode = 0
 
 [node name="Plants" type="Control" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -270,6 +270,7 @@ layout_mode = 2
 inventory_manager = NodePath("../../../../../../../../../../../InventoryManager")
 
 [node name="Shop" type="MarginContainer" parent="TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
@@ -374,3 +375,15 @@ script = ExtResource("7_rlaii")
 visible = false
 layout_mode = 0
 offset_right = 300.0
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PlantGuide" parent="CenterContainer" instance=ExtResource("8_srxbw")]
+layout_mode = 2

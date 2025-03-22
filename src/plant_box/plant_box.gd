@@ -22,6 +22,11 @@ func _ready() -> void:
 func _on_mouse_enter():
     if plant_resource:
         Events.emit_tooltip_change(Tooltip.Type.PLANT, plant_resource)
+    elif trellis:
+        Events.emit_tooltip_change(Tooltip.Type.ITEM, {
+            'name': 'Mutation Plot',
+            'description': 'This spot can grow a plant from parent crops'
+        })
 
 func _on_mouse_exit():
     Events.emit_tooltip_change(Tooltip.Type.NONE, null)

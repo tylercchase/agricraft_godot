@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://n7l1dka4ckl1"]
+
+[ext_resource type="Script" uid="uid://v83jxvpytv2l" path="res://src/items/item.gd" id="1_lus2m"]
+
+[resource]
+script = ExtResource("1_lus2m")
+name = "Potato"
+id = "potato"
+description = "Tasty"
+display_character = "p"
+base_sell_price = 3
+metadata/_custom_type_script = "uid://v83jxvpytv2l"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://dvif6ptpn1wmd"]
+
+[ext_resource type="Script" uid="uid://v83jxvpytv2l" path="res://src/items/item.gd" id="1_bcugr"]
+
+[resource]
+script = ExtResource("1_bcugr")
+name = "Godotato"
+id = "godotato"
+description = "Smells like godot"
+display_character = "g"
+base_sell_price = 1
+metadata/_custom_type_script = "uid://v83jxvpytv2l"

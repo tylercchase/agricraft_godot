@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dlr6x31phuvus"]
+[gd_scene load_steps=19 format=3 uid="uid://dlr6x31phuvus"]
 
 [ext_resource type="PackedScene" uid="uid://b7wu05i547vg0" path="res://src/plant_box/plant_box.tscn" id="1_eewff"]
 [ext_resource type="Script" uid="uid://wkwq7hadg7p6" path="res://src/plant_box/plant_grid_container.gd" id="1_gh0ne"]
@@ -9,11 +9,14 @@
 [ext_resource type="Script" uid="uid://i7m14kcvvg8e" path="res://src/managers/plant_growth_manager.gd" id="5_fyndt"]
 [ext_resource type="Resource" uid="uid://d1mm8od10gywy" path="res://src/plant/resources/wheat.tres" id="5_kqbth"]
 [ext_resource type="Script" uid="uid://dkff2xlrw5sl5" path="res://src/header/currency_label.gd" id="5_mgm53"]
-[ext_resource type="PackedScene" uid="uid://1t4k8725kuwa" path="res://src/shop/buy_item/sell_container.tscn" id="5_uewes"]
+[ext_resource type="PackedScene" uid="uid://1t4k8725kuwa" path="res://src/shop/sell_item/sell_container.tscn" id="5_uewes"]
 [ext_resource type="Script" uid="uid://gk71eqjiho7u" path="res://src/managers/plant_manager.gd" id="6_kmhfv"]
+[ext_resource type="Resource" uid="uid://bqnilft85o7n2" path="res://src/plant/resources/Potato.tres" id="7_e7lu8"]
 [ext_resource type="Script" uid="uid://cg42us3h16aru" path="res://src/managers/inventory_manager.gd" id="7_rlaii"]
 [ext_resource type="PackedScene" uid="uid://q7vq66m46nni" path="res://src/tooltip/tooltip.tscn" id="8_5mrjc"]
+[ext_resource type="Resource" uid="uid://dxkib30sqcjk5" path="res://src/plant/resources/godotato.tres" id="8_okx7f"]
 [ext_resource type="PackedScene" uid="uid://7570ux4il3p3" path="res://src/guides/plant_guide.tscn" id="8_srxbw"]
+[ext_resource type="PackedScene" uid="uid://pvr4bbnpgfnr" path="res://src/shop/buy_upgrade/buy_upgrade.tscn" id="9_okx7f"]
 [ext_resource type="Script" uid="uid://bxo5knqet1j5l" path="res://src/guides/guide_manager.gd" id="13_d3u4l"]
 
 [node name="Control" type="Control"]
@@ -284,14 +287,62 @@ metadata/_tab_index = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Shop"]
 layout_mode = 2
 
-[node name="Control" type="HBoxContainer" parent="TabContainer/Shop/HBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="TabContainer/Shop/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TabContainer" type="TabContainer" parent="TabContainer/Shop/HBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+theme_override_constants/side_margin = 0
+current_tab = 1
+
+[node name="Plants" type="ScrollContainer" parent="TabContainer/Shop/HBoxContainer/CenterContainer/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_tab_index = 0
+
+[node name="Plants" type="HBoxContainer" parent="TabContainer/Shop/HBoxContainer/CenterContainer/TabContainer/Plants"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="ShopBuyItemContainer" parent="TabContainer/Shop/HBoxContainer/Control" instance=ExtResource("4_kf8lf")]
+[node name="ShopBuyItemContainer" parent="TabContainer/Shop/HBoxContainer/CenterContainer/TabContainer/Plants/Plants" instance=ExtResource("4_kf8lf")]
 layout_mode = 2
 item_to_purchase = ExtResource("5_kqbth")
+
+[node name="ShopBuyItemContainer2" parent="TabContainer/Shop/HBoxContainer/CenterContainer/TabContainer/Plants/Plants" instance=ExtResource("4_kf8lf")]
+layout_mode = 2
+item_to_purchase = ExtResource("7_e7lu8")
+
+[node name="ShopBuyItemContainer3" parent="TabContainer/Shop/HBoxContainer/CenterContainer/TabContainer/Plants/Plants" instance=ExtResource("4_kf8lf")]
+layout_mode = 2
+item_to_purchase = ExtResource("8_okx7f")
+
+[node name="Upgrades" type="ScrollContainer" parent="TabContainer/Shop/HBoxContainer/CenterContainer/TabContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_tab_index = 1
+
+[node name="Plants" type="HBoxContainer" parent="TabContainer/Shop/HBoxContainer/CenterContainer/TabContainer/Upgrades"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="PanelContainer" parent="TabContainer/Shop/HBoxContainer/CenterContainer/TabContainer/Upgrades/Plants" instance=ExtResource("9_okx7f")]
+layout_mode = 2
+upgrade_name = "Mutation"
+id = "mutation"
+prices = Array[int]([5])
+description = "Increases the chance of a plant mutating"
+
+[node name="PanelContainer2" parent="TabContainer/Shop/HBoxContainer/CenterContainer/TabContainer/Upgrades/Plants" instance=ExtResource("9_okx7f")]
+layout_mode = 2
+upgrade_name = "Speed"
+id = "speed"
+prices = Array[int]([5])
+description = "Increases the general growing speed of all plants"
 
 [node name="PanelContainer" parent="TabContainer/Shop/HBoxContainer" node_paths=PackedStringArray("inventory_manager") instance=ExtResource("5_uewes")]
 layout_mode = 2

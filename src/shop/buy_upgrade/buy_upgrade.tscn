@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://pvr4bbnpgfnr"]
+
+[ext_resource type="Script" uid="uid://cx4l4oxqpjqlg" path="res://src/shop/buy_upgrade/buy_upgrade.gd" id="1_rje5i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khc5n"]
+bg_color = Color(0.282353, 0.282353, 0.282353, 1)
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+
+[node name="PanelContainer" type="PanelContainer" node_paths=PackedStringArray("name_label", "description_label", "upgrade_button")]
+custom_minimum_size = Vector2(163.46, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -38.0
+offset_right = 40.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_khc5n")
+script = ExtResource("1_rje5i")
+name_label = NodePath("MarginContainer/ShopBuyItemContainer/Label")
+description_label = NodePath("MarginContainer/ShopBuyItemContainer/RichTextLabel")
+upgrade_button = NodePath("MarginContainer/ShopBuyItemContainer/PurchaseButton")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 17
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 14
+
+[node name="ShopBuyItemContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/ShopBuyItemContainer"]
+layout_mode = 2
+text = "Wheat Seed"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ShopBuyItemContainer"]
+custom_minimum_size = Vector2(0, 61.39)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Enables the use of things"
+
+[node name="PurchaseButton" type="Button" parent="MarginContainer/ShopBuyItemContainer"]
+layout_mode = 2
+text = "Buy 5g"

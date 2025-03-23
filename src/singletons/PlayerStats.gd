@@ -9,3 +9,7 @@ var currency = 0:
             currency_changed.emit(value)
             currency = value
 
+
+var global_mutation = 0.3
+
+var global_speed_mult = 1.0

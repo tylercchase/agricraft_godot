@@ -82,7 +82,7 @@ func calculate_final_genomes(plant1: Plant, plant2: Plant) -> Array[Plant.Genome
     return [dominant_gene, recessive_gene]
 
 func mutate(value):
-    var chance_to_mutate = 0.5
+    var chance_to_mutate = PlayerStats.global_mutation
     if randf() < chance_to_mutate:
         return clamp(value+1,1,10)
     else:

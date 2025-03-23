@@ -335,14 +335,14 @@ layout_mode = 2
 upgrade_name = "Mutation"
 id = "mutation"
 prices = Array[int]([5])
-description = "Increases the chance of a plant mutating"
+description = "Increases the chance of a plant mutating by 5%"
 
 [node name="PanelContainer2" parent="TabContainer/Shop/HBoxContainer/CenterContainer/TabContainer/Upgrades/Plants" instance=ExtResource("9_okx7f")]
 layout_mode = 2
 upgrade_name = "Speed"
 id = "speed"
 prices = Array[int]([5])
-description = "Increases the general growing speed of all plants"
+description = "Increases all plants growing speed by 5%"
 
 [node name="PanelContainer" parent="TabContainer/Shop/HBoxContainer" node_paths=PackedStringArray("inventory_manager") instance=ExtResource("5_uewes")]
 layout_mode = 2

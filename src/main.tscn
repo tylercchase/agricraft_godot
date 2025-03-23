@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dlr6x31phuvus"]
+[gd_scene load_steps=26 format=3 uid="uid://dlr6x31phuvus"]
 
 [ext_resource type="PackedScene" uid="uid://b7wu05i547vg0" path="res://src/plant_box/plant_box.tscn" id="1_eewff"]
 [ext_resource type="Script" uid="uid://wkwq7hadg7p6" path="res://src/plant_box/plant_grid_container.gd" id="1_gh0ne"]
@@ -19,6 +19,11 @@
 [ext_resource type="PackedScene" uid="uid://pvr4bbnpgfnr" path="res://src/shop/buy_upgrade/buy_upgrade.tscn" id="9_okx7f"]
 [ext_resource type="Script" uid="uid://d2kws0eba8bma" path="res://src/achievements/item_goal.gd" id="11_sta5p"]
 [ext_resource type="Script" uid="uid://bxo5knqet1j5l" path="res://src/guides/guide_manager.gd" id="13_d3u4l"]
+[ext_resource type="AudioStream" uid="uid://dgll5ceo8lcab" path="res://assets/dig_click.wav" id="14_ib8ht"]
+[ext_resource type="AudioStream" uid="uid://s8imjhbcl02t" path="res://assets/interact_click.wav" id="15_43aqp"]
+[ext_resource type="AudioStream" uid="uid://bb08w6626e7q2" path="res://assets/trellis_click.wav" id="17_43aqp"]
+[ext_resource type="AudioStream" uid="uid://6fhlp62t3m75" path="res://assets/powerUp.wav" id="18_ocmcv"]
+[ext_resource type="AudioStream" uid="uid://djunta12pt5hw" path="res://assets/pickupCoin.wav" id="19_adv81"]
 [ext_resource type="AudioStream" uid="uid://b023rmwmlxy8b" path="res://assets/click.wav" id="20_sif16"]
 
 [node name="Control" type="Control"]
@@ -505,6 +510,12 @@ plant_grid_container = NodePath("../TabContainer/Plants/Plants/VBoxContainer/Pla
 plant_manager = NodePath("../PlantManager")
 inventory_manager = NodePath("../InventoryManager")
 audio_stream = NodePath("../AudioStreamPlayer")
+dig_click = ExtResource("14_ib8ht")
+interact_click = ExtResource("15_43aqp")
+default_click = ExtResource("20_sif16")
+trellis_click = ExtResource("17_43aqp")
+shop_buy = ExtResource("18_ocmcv")
+shop_sell = ExtResource("19_adv81")
 
 [node name="PlantGrowthManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "plant_manager")]
 script = ExtResource("5_fyndt")
@@ -545,4 +556,4 @@ layout_mode = 1
 id = "plants"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_sif16")
+volume_db = -5.318

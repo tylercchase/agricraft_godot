@@ -53,6 +53,7 @@ func sell_item(modifier: Modifier):
             amount_to_sell = selected_item.amount
     PlayerStats.currency += selected_item.item.base_sell_price * amount_to_sell
     inventory_manager.remove_item(selected_item.item.id, amount_to_sell)
+    Events.emit_sound_event('shop_sell')
 
 func _on_set_selected_item(new_selected_item):
     if new_selected_item != null && new_selected_item is InventoryManager.ItemSlot:

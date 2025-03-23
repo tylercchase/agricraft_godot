@@ -65,6 +65,7 @@ func _on_currency_changed(current_funds):
 
 func handle_upgrades(id: String):
     # this is gonna be super gross, but last minute coding ftw
+    Events.emit_sound_event('shop_buy')
     if id == 'mutation':
         PlayerStats.global_mutation *= 1.05
         pass

@@ -14,6 +14,8 @@ signal guide_open
 
 signal item_collected
 
+signal sound_event
+
 func emit_interaction_mode_changed(mode):
     interaction_mode_changed.emit(mode)
 
@@ -34,3 +36,6 @@ func emit_guide_open(guide: String):
 
 func emit_item_collected(item: InventoryItem, count:int):
     item_collected.emit(item, count)
+
+func emit_sound_event(id: String):
+    sound_event.emit(id)

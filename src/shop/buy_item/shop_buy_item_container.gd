@@ -34,6 +34,7 @@ func _on_purchase_button(amount):
 func purchase_item(amount):
     PlayerStats.currency = clamp(PlayerStats.currency - amount * price_per, 0, INF)
     Events.emit_buy_item(item_to_purchase, amount)
+    Events.emit_sound_event('shop_buy')
 
 func update_buttons(current_funds):
     purchase_1_button.disabled = !check_if_buyable(current_funds, 1)

@@ -296,10 +296,9 @@ size_flags_horizontal = 3
 custom_minimum_size = Vector2(400, 200)
 layout_mode = 2
 theme_override_constants/side_margin = 0
-current_tab = 1
+current_tab = 0
 
 [node name="Plants" type="ScrollContainer" parent="TabContainer/Shop/HBoxContainer/CenterContainer/TabContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 metadata/_tab_index = 0
@@ -322,6 +321,7 @@ layout_mode = 2
 item_to_purchase = ExtResource("8_okx7f")
 
 [node name="Upgrades" type="ScrollContainer" parent="TabContainer/Shop/HBoxContainer/CenterContainer/TabContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 metadata/_tab_index = 1

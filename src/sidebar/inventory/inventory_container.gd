@@ -15,16 +15,17 @@ func _ready() -> void:
     Events.set_selected_item.connect(_on_selected_item)
     inventory_manager.inventory_changed.connect(update_items)
 
-
+var items_cached
 func _on_selected_item(item):
     selected_item = item
+    update_items(items_cached)
 
 func update_items(items: Array[InventoryManager.ItemSlot]):
 	# just make a whole new thing, can be optimized in the future
 	# works for now tho
     for child in container.get_children():
         child.queue_free()
-
+    items_cached = items
     for item in items:
         var scene : Button = slot_scene.instantiate()
         container.add_child(scene)
@@ -38,7 +39,8 @@ func update_items(items: Array[InventoryManager.ItemSlot]):
             scene.text = str(item.item)
         scene.mouse_exited.connect(Events.emit_tooltip_change.bind(Tooltip.Type.NONE, null))
         scene.pressed.connect(_on_item_pressed.bind(item))
-        scene.setup(item)
+        var selected = selected_item != null && selected_item.id == item.id
+        scene.setup(item, selected)
 
 
 func _on_item_pressed(item):

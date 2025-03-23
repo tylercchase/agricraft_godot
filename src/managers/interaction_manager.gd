@@ -5,6 +5,7 @@ extends Node
 @export var plant_grid_container: PlantGridContainer
 @export var plant_manager: PlantManager
 @export var inventory_manager: InventoryManager
+@export var audio_stream: AudioStreamPlayer
 
 var selected_item: InventoryManager.ItemSlot = null
 
@@ -67,3 +68,4 @@ func _on_square_clicked(id, mouse_button):
         if box.harvestable: # harvest a removed grown crop
             plant_manager.harvest_crop(id)
         plant_manager.clear_space(id)
+    audio_stream.play()

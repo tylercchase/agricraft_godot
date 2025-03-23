@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dlr6x31phuvus"]
+[gd_scene load_steps=21 format=3 uid="uid://dlr6x31phuvus"]
 
 [ext_resource type="PackedScene" uid="uid://b7wu05i547vg0" path="res://src/plant_box/plant_box.tscn" id="1_eewff"]
 [ext_resource type="Script" uid="uid://wkwq7hadg7p6" path="res://src/plant_box/plant_grid_container.gd" id="1_gh0ne"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://pvr4bbnpgfnr" path="res://src/shop/buy_upgrade/buy_upgrade.tscn" id="9_okx7f"]
 [ext_resource type="Script" uid="uid://d2kws0eba8bma" path="res://src/achievements/item_goal.gd" id="11_sta5p"]
 [ext_resource type="Script" uid="uid://bxo5knqet1j5l" path="res://src/guides/guide_manager.gd" id="13_d3u4l"]
+[ext_resource type="AudioStream" uid="uid://b023rmwmlxy8b" path="res://assets/click.wav" id="20_sif16"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -498,11 +499,12 @@ layout_mode = 2
 text = "Currency"
 script = ExtResource("5_mgm53")
 
-[node name="InteractionManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "plant_manager", "inventory_manager")]
+[node name="InteractionManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "plant_manager", "inventory_manager", "audio_stream")]
 script = ExtResource("4_3cfgd")
 plant_grid_container = NodePath("../TabContainer/Plants/Plants/VBoxContainer/PlantGridContainer")
 plant_manager = NodePath("../PlantManager")
 inventory_manager = NodePath("../InventoryManager")
+audio_stream = NodePath("../AudioStreamPlayer")
 
 [node name="PlantGrowthManager" type="Node" parent="." node_paths=PackedStringArray("plant_grid_container", "plant_manager")]
 script = ExtResource("5_fyndt")
@@ -541,3 +543,6 @@ script = ExtResource("13_d3u4l")
 visible = false
 layout_mode = 1
 id = "plants"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_sif16")

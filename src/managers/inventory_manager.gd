@@ -37,6 +37,7 @@ func add_item(item, count=1):
     if item is Plant: # it's a seed
         item_slot.id = item.id + item.dominant_gene.to_string() + '-' + item.recessive_gene.to_string() # possibly use a combo of genetic stuff for this, add a to string function to genomes?
     elif item is InventoryItem:
+        Events.emit_item_collected(item, count)
         item_slot.id = item.id
     else:
         item_slot.id = item # it's a string just use it raw

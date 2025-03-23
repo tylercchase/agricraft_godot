@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dlr6x31phuvus"]
+[gd_scene load_steps=20 format=3 uid="uid://dlr6x31phuvus"]
 
 [ext_resource type="PackedScene" uid="uid://b7wu05i547vg0" path="res://src/plant_box/plant_box.tscn" id="1_eewff"]
 [ext_resource type="Script" uid="uid://wkwq7hadg7p6" path="res://src/plant_box/plant_grid_container.gd" id="1_gh0ne"]
@@ -17,6 +17,7 @@
 [ext_resource type="Resource" uid="uid://dxkib30sqcjk5" path="res://src/plant/resources/godotato.tres" id="8_okx7f"]
 [ext_resource type="PackedScene" uid="uid://7570ux4il3p3" path="res://src/guides/plant_guide.tscn" id="8_srxbw"]
 [ext_resource type="PackedScene" uid="uid://pvr4bbnpgfnr" path="res://src/shop/buy_upgrade/buy_upgrade.tscn" id="9_okx7f"]
+[ext_resource type="Script" uid="uid://d2kws0eba8bma" path="res://src/achievements/item_goal.gd" id="11_sta5p"]
 [ext_resource type="Script" uid="uid://bxo5knqet1j5l" path="res://src/guides/guide_manager.gd" id="13_d3u4l"]
 
 [node name="Control" type="Control"]
@@ -44,11 +45,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
-current_tab = 1
+current_tab = 0
 tab_focus_mode = 0
 
 [node name="Plants" type="Control" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -278,6 +278,7 @@ layout_mode = 2
 inventory_manager = NodePath("../../../../../../../../../../../InventoryManager")
 
 [node name="Shop" type="MarginContainer" parent="TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
@@ -334,14 +335,14 @@ alignment = 1
 layout_mode = 2
 upgrade_name = "Mutation"
 id = "mutation"
-prices = Array[int]([5])
+prices = Array[int]([5, 50, 100, 200, 350])
 description = "Increases the chance of a plant mutating by 5%"
 
 [node name="PanelContainer2" parent="TabContainer/Shop/HBoxContainer/CenterContainer/TabContainer/Upgrades/Plants" instance=ExtResource("9_okx7f")]
 layout_mode = 2
 upgrade_name = "Speed"
 id = "speed"
-prices = Array[int]([5])
+prices = Array[int]([5, 30, 60, 150])
 description = "Increases all plants growing speed by 5%"
 
 [node name="PanelContainer" parent="TabContainer/Shop/HBoxContainer" node_paths=PackedStringArray("inventory_manager") instance=ExtResource("5_uewes")]
@@ -387,6 +388,96 @@ layout_mode = 2
 [node name="InventoryContainer" parent="TabContainer/Shop/HBoxContainer/MenuContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("inventory_manager") instance=ExtResource("3_5mrjc")]
 layout_mode = 2
 inventory_manager = NodePath("../../../../../../../../../../../InventoryManager")
+
+[node name="Achievements" type="Control" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="TabContainer/Achievements"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Achievements/CenterContainer"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Achievements/CenterContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Harvest 5  Wheat"
+
+[node name="ProgressBar" type="ProgressBar" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+script = ExtResource("11_sta5p")
+item_id = "wheat"
+total_to_collect = 5
+
+[node name="PanelContainer2" type="PanelContainer" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Harvest 50 Potatoes"
+
+[node name="ProgressBar" type="ProgressBar" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+script = ExtResource("11_sta5p")
+item_id = "potato"
+total_to_collect = 50
+
+[node name="PanelContainer3" type="PanelContainer" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Harvest 100 Godotatoes"
+
+[node name="ProgressBar" type="ProgressBar" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+script = ExtResource("11_sta5p")
+item_id = "godotato"
+total_to_collect = 100
+
+[node name="PanelContainer4" type="PanelContainer" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer4"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer4/VBoxContainer"]
+layout_mode = 2
+text = "Harvest 1000 Wheat"
+
+[node name="ProgressBar" type="ProgressBar" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer4/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+script = ExtResource("11_sta5p")
+item_id = "wheat"
+total_to_collect = 1000
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

@@ -5,7 +5,8 @@
 [resource]
 script = ExtResource("1_rxmuc")
 name = "Wheat"
-id = "wheat-item"
+id = "wheat"
 description = "A piece of wheat, idk maybe you can make bread?"
 display_character = "w"
+base_sell_price = 1
 metadata/_custom_type_script = "uid://v83jxvpytv2l"

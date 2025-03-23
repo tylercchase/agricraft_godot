@@ -8,5 +8,5 @@ name = "Godotato"
 id = "godotato"
 description = "Smells like godot"
 display_character = "g"
-base_sell_price = 1
+base_sell_price = 5
 metadata/_custom_type_script = "uid://v83jxvpytv2l"

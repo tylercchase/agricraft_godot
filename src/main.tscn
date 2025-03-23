@@ -321,10 +321,12 @@ item_to_purchase = ExtResource("5_kqbth")
 [node name="ShopBuyItemContainer2" parent="TabContainer/Shop/HBoxContainer/CenterContainer/TabContainer/Plants/Plants" instance=ExtResource("4_kf8lf")]
 layout_mode = 2
 item_to_purchase = ExtResource("7_e7lu8")
+price_per = 15
 
 [node name="ShopBuyItemContainer3" parent="TabContainer/Shop/HBoxContainer/CenterContainer/TabContainer/Plants/Plants" instance=ExtResource("4_kf8lf")]
 layout_mode = 2
 item_to_purchase = ExtResource("8_okx7f")
+price_per = 50
 
 [node name="Upgrades" type="ScrollContainer" parent="TabContainer/Shop/HBoxContainer/CenterContainer/TabContainer"]
 visible = false

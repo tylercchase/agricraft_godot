@@ -28,7 +28,7 @@ func _ready() -> void:
     Events.square_clicked.connect(_on_square_clicked)
     Events.set_selected_item.connect(set_active_item)
     # plant_manager.plant_crop(load("res://src/plant/resources/wheat.tres"), id)
-    PlayerStats.currency += 10
+    # PlayerStats.currency += 10
     Events.sound_event.connect(_on_sound_event)
 
 func toggle_mode(mode: Mode):

@@ -51,10 +51,11 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
-current_tab = 0
+current_tab = 2
 tab_focus_mode = 0
 
 [node name="Plants" type="Control" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -396,7 +397,6 @@ layout_mode = 2
 inventory_manager = NodePath("../../../../../../../../../../../InventoryManager")
 
 [node name="Achievements" type="Control" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -484,6 +484,57 @@ max_value = 1.0
 script = ExtResource("11_sta5p")
 item_id = "wheat"
 total_to_collect = 1000
+
+[node name="PanelContainer5" type="PanelContainer" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer5"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer5/VBoxContainer"]
+layout_mode = 2
+text = "Obtain a max stat Wheat Seed"
+
+[node name="ProgressBar" type="ProgressBar" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer5/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+script = ExtResource("11_sta5p")
+item_id = "wheat-seed-10-10-10-10"
+total_to_collect = 1
+
+[node name="PanelContainer6" type="PanelContainer" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer6"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer6/VBoxContainer"]
+layout_mode = 2
+text = "Obtain a max stat Potato Seed"
+
+[node name="ProgressBar" type="ProgressBar" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer6/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+script = ExtResource("11_sta5p")
+item_id = "potato-seed-10-10-10-10"
+total_to_collect = 1
+
+[node name="PanelContainer7" type="PanelContainer" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer7"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer7/VBoxContainer"]
+layout_mode = 2
+text = "Obtain a max stat Godotato Seed"
+
+[node name="ProgressBar" type="ProgressBar" parent="TabContainer/Achievements/CenterContainer/ScrollContainer/VBoxContainer/PanelContainer7/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+script = ExtResource("11_sta5p")
+item_id = "godotato-seed-10-10-10-10"
+total_to_collect = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

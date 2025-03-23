@@ -34,7 +34,7 @@ func emit_buy_item(item: Resource, amount: int):
 func emit_guide_open(guide: String):
     guide_open.emit(guide)
 
-func emit_item_collected(item: InventoryItem, count:int):
+func emit_item_collected(item: String, count:int):
     item_collected.emit(item, count)
 
 func emit_sound_event(id: String):

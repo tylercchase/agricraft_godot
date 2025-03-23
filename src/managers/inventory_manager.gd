@@ -35,14 +35,14 @@ func add_item(item, count=1):
     var item_slot = ItemSlot.new()
     item_slot.item = item
     if item is Plant: # it's a seed
-        item_slot.id = item.id + item.dominant_gene.to_string() + '-' + item.recessive_gene.to_string() # possibly use a combo of genetic stuff for this, add a to string function to genomes?
+        item_slot.id = item.id + '-' +item.dominant_gene.to_string() + '-' + item.recessive_gene.to_string() # possibly use a combo of genetic stuff for this, add a to string function to genomes?
     elif item is InventoryItem:
-        Events.emit_item_collected(item, count)
         item_slot.id = item.id
     else:
         item_slot.id = item # it's a string just use it raw
         # eventually this should probably use a resource for items, but for now it's fineeee
     var check_index = items.find_custom(find_id.bind(item_slot.id))
+    Events.emit_item_collected(item_slot.id, count)
     if check_index >= 0:
         items[check_index].amount += count
     else:

@@ -12,6 +12,9 @@ var trellis = false
 
 @onready var label: Label = %Label
 @onready var progress_bar: ProgressBar = %ProgressBar
+
+signal dropped
+
 var id
 
 func _ready() -> void:
@@ -81,3 +84,14 @@ func remove_trellis():
 func clear_spot():
     remove_trellis()
     remove_plant()
+
+
+func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+    # if data.item
+    if !data is InventoryManager.ItemSlot: return false
+    if !data.item is Plant: return false
+
+    return !is_occupied()
+
+func _drop_data(at_position: Vector2, data: Variant) -> void:
+    Events.emit_square_clicked(id, MOUSE_BUTTON_LEFT)

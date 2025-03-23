@@ -51,11 +51,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
-current_tab = 2
+current_tab = 0
 tab_focus_mode = 0
 
 [node name="Plants" type="Control" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -397,6 +396,7 @@ layout_mode = 2
 inventory_manager = NodePath("../../../../../../../../../../../InventoryManager")
 
 [node name="Achievements" type="Control" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 

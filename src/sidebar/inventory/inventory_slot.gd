@@ -1,5 +1,6 @@
 extends Button
 
+var saved_data: InventoryManager.ItemSlot
 
 func setup(data: InventoryManager.ItemSlot, selected=false):
     if data.item is Plant:
@@ -12,3 +13,11 @@ func setup(data: InventoryManager.ItemSlot, selected=false):
     text = data.item.display_character
     if selected:
         modulate = Color('b09597')
+    saved_data = data
+
+func _get_drag_data(at_position: Vector2):
+    if saved_data.item is Plant:
+        Events.emit_selected_item(saved_data)
+        return saved_data
+    else:
+        return null
